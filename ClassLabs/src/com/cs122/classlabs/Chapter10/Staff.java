@@ -19,7 +19,7 @@ public class Staff
 
       staffList[0] = new Executive("Sam", "123 Main Line",
          "555-0469", "123-45-6789", 2423.07);
-
+      
       staffList[1] = new Employee("Carla", "456 Off Line",
          "555-0101", "987-65-4321", 1246.15);
       staffList[2] = new Employee("Woody", "789 Off Rocker",
@@ -30,6 +30,7 @@ public class Staff
 
       staffList[4] = new Volunteer("Norm", "987 Suds Blvd.",
          "555-8374");
+
       staffList[5] = new Volunteer("Cliff", "321 Duds Lane",
          "555-7282");
 
@@ -58,5 +59,13 @@ public class Staff
 
          System.out.println("-----------------------------------");
       }
+   }
+   
+   public void printVacation() {
+
+	   for(int i = 0; i < staffList.length; i++) {
+		   staffList[i].setVacation();
+		   System.out.println("Name: "+staffList[i].getName()+ "\nVacations: "+staffList[i].vacation() + " days\n");
+	   }
    }
 }

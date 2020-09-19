@@ -42,4 +42,8 @@ public class Executive extends Employee
 
       return payment;
    }
+   
+   public void setVacation() {
+	   this.vacationDays = 28;
+   }
 }

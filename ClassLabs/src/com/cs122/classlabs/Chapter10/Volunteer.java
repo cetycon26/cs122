@@ -24,4 +24,7 @@ public class Volunteer extends StaffMember
    {
       return 0.0;
    }
+   public void setVacation() {
+	   this.vacationDays = 10;
+   }
 }
