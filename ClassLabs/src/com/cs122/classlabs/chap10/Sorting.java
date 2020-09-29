@@ -1,4 +1,5 @@
-package com.cs122.classlabs.Chapter10;
+package com.cs122.classlabs.chap10;
+
 
 //********************************************************************
 //  Sorting.java       Author: Lewis/Loftus
@@ -53,5 +54,3 @@ public class Sorting<T>
         }
     }
 }
-
-
