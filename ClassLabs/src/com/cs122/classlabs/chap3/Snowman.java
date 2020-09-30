@@ -31,8 +31,11 @@ public class Snowman extends Application
         head.setFill(Color.WHITE);
 
         Circle rightEye = new Circle(70, 60, 5);
-        Circle leftEye = new Circle(90, 60, 5);
-        Line mouth = new Line(70, 80, 90, 80);
+        Circle leftEye = new Circle(90, 70, 5);
+        Ellipse mouth = new Ellipse(80, 80, 5, 10);
+        mouth.setFill(Color.PINK);
+        mouth.setStroke(Color.FIREBRICK);
+        mouth.setStrokeWidth(1);
 
         Circle topButton = new Circle(80, 120, 6);
         topButton.setFill(Color.RED);
@@ -55,14 +58,17 @@ public class Snowman extends Application
         snowman.setTranslateX(170);
         snowman.setTranslateY(50);
 
-        Circle sun = new Circle(50, 50, 30);
-        sun.setFill(Color.GOLD);
+        Circle sun = new Circle(460, 230, 30);
+        sun.setFill(Color.DARKORANGE);
+        
+        Circle moon = new Circle(80, 80, 50);
+        moon.setFill(Color.BLANCHEDALMOND);
 
         Rectangle ground = new Rectangle(0, 250, 500, 100);
         ground.setFill(Color.STEELBLUE);
 
-        Group root = new Group(ground, sun, snowman);
-        Scene scene = new Scene(root, 500, 350, Color.LIGHTBLUE);
+        Group root = new Group(sun, moon, ground, snowman);
+        Scene scene = new Scene(root, 500, 350, Color.DARKVIOLET);
 
         primaryStage.setTitle("Snowman");
         primaryStage.setScene(scene);
