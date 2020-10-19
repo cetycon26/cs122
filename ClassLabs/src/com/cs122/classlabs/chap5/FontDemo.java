@@ -29,6 +29,10 @@ public class FontDemo extends Application
                 FontPosture.ITALIC, 28);
         Font font3 = Font.font("Arial", FontPosture.ITALIC, 14);
         
+        Font font4 = Font.font("Sans", FontWeight.BOLD, FontPosture.ITALIC, 20);
+        Font font5 = new Font("Calibri", 15);
+        Font font6 = Font.font("Times", FontPosture.ITALIC, 15);
+        
         Text text1 = new Text(30, 55, "Dream Big");
         text1.setFont(font1);
         text1.setUnderline(true);
@@ -41,7 +45,16 @@ public class FontDemo extends Application
             "between theory\nand practice, but in practice there is.");
         text3.setFont(font3);
         
-        Group root = new Group(text1, text2, text3);
+        Text text4 = new Text(50, 135, "Hello World");
+        text4.setFont(font4);
+        
+        Text text5 = new Text(200, 55, "To be or not to be...");
+        text5.setFont(font5);
+        
+        Text text6 = new Text(30, 80, "Flow like water");
+        text6.setFont(font6);
+        text6.setFill(Color.CORNFLOWERBLUE);
+        Group root = new Group(text1, text2, text3, text4, text5, text6);
         Scene scene = new Scene(root, 400, 200, Color.LIGHTCYAN);
         
         primaryStage.setTitle("Font Demo");
