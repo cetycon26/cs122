@@ -6,6 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 public class AgeCalculator extends GridPane{
@@ -38,12 +39,8 @@ public class AgeCalculator extends GridPane{
 		yob.setFont(font);
 		yob.setPrefWidth(80);
 		yob.setAlignment(Pos.CENTER);
-        try{
-        	yob.setOnAction(this::processReturn);
-        }
-        catch(NumberFormatException e) {
-        	
-        }
+        yob.setOnAction(this::processReturn);
+
 
         setAlignment(Pos.CENTER);
         setHgap(20);
@@ -60,26 +57,25 @@ public class AgeCalculator extends GridPane{
 	
 	public void processReturn(ActionEvent event)
     {
-        	int yobDate = Integer.parseInt(yob.getText());
-        	int length = yob.getLength()*10;
+        	int yobDate;
         	try{
-        		for(int i=0; i< yob.getLength(); i++) {
-        			if(yobDate % (length-(10*i+10)) >=0 && yobDate % (length-(10*i+10)) <=9)
-        				continue;
-        			else
-        				throw new NumberFormatException("Number can only contain digits");
-
-        		}
+        		yobDate = Integer.parseInt(yob.getText());
+        		if(yobDate < 1920) {
+            		exception.setText("Congrats! You've lived over 100 years!");
+            		exception.setTextFill(Color.DARKGREEN);
+            	}
+            	else
+            		exception.setText("");
+        		age.setText(2020 - yobDate + "");
         	}
         	catch(NumberFormatException e) {
-        		System.out.println("Please only input a number");
+        		exception.setTextFill(Color.RED);
+        		exception.setText("Please enter a valid number");
+        		yob.clear();
+        		age.setText("");
         	}
         	
-        	if(yobDate <= 1920)
-        		exception.setText("Congrats! You've lived over 100 years!");
-        	else
-        		exception.setText("");
-        	age.setText(2020 - yobDate + "");
+        	
 
     }
         
