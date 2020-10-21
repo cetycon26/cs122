@@ -71,15 +71,15 @@ public class CheckboxLab extends VBox {
 		if(size60.isSelected())
 			size = 60.0;
 		if(times.isSelected())
-			family = new String("Times");
+			family = new String("Times New Roman");
 		if(courier.isSelected())
-			family = new String("Courier");
+			family = new String("Courier New");
 		if(yellow.isSelected())
 			mainText.setFill(Color.YELLOW);
 		if(white.isSelected())
 			mainText.setFill(Color.WHITE);
 
-		mainText.setFont(new Font(family, size)); //setting family doesn't work right yet
+		mainText.setFont(new Font(family, size)); 
 		
 	}
 }
