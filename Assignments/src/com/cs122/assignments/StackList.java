@@ -28,6 +28,7 @@ public class StackList {
 			StackNode newNode = node;
 			newNode.next = top;
 			top = newNode;
+			count++;
 		}
 
 	}
@@ -40,6 +41,7 @@ public class StackList {
 			System.out.println(top.item);
 			top.next = null;
 			top = temp;
+			count--;
 		}
 	}
 	

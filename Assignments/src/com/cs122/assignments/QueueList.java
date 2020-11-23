@@ -11,20 +11,18 @@ public class QueueList {
 		public String item;
 		public QueueNode next;
 		
-		
 		public QueueNode(String q) {
 			item = q;
 			next = null;
 		}
-		
 	}
+	
 	public QueueList() {
 		top = null;
 	}
 	
 	public void enqueue(String q) { //add method
 		QueueNode node = new QueueNode(q);
-//		QueueNode current;
 		
 		if(empty()) {
 			top = node;
@@ -61,12 +59,6 @@ public class QueueList {
 	}
 	
 	public void print() {
-//		while(top.next != null) {
-//			System.out.print(top.item + " --> ");
-//			top = top.next;
-//		
-//		}
-//		System.out.println(top.item + " --> ");
 		String result = "";
 
         QueueNode current = top;
@@ -79,6 +71,4 @@ public class QueueList {
 
         System.out.println(result);
 	}
-	
-	
 }
